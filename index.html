@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Advaith</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- linking css file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<script>
+    const header = document.querySelector('.navbar');
+
+        window.onscroll = function () {
+            var top = window.scrollY;
+            if (top >= 100) {
+                header.classList.add('navbarDark');
+            }
+            else {
+                header.classList.remove('navbarDark');
+            }
+        }
+
+</script>
+<style>
+    .navbarScroll.navbarDark {
+    background-color: black;
+}
+    .bgimage {
+    height: 100vh;
+    background: url('image.png');
+    background-size: cover;
+    position: relative;
+}
+
+/* text css above hero image*/
+.title {
+    font-size: 4.5rem;
+}
+
+.desc {
+    font-size: 2rem;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.navbar navbar-expand-lg fixed-top navbarScroll{
+    color: whitesmoke;
+}
+servicesText.card {
+    height: 280px;
+    cursor: pointer;
+  }
+.servicesIcon {
+    font-size: 36px;
+    text-align: center;
+    width: 100%;
+}
+.card-title {
+    text-align: center;
+}
+.card:hover .servicesIcon {
+    color: #008000;
+}
+.servicesText:hover {
+    border: 1px solid #008000;
+}
+.portfolioContent {
+    border: 1px solid #008000;
+}
+</style>
+<nav class="navbar navbar-expand-lg fixed-top navbarScroll">
+    
+    <div class="container">
+        <a class="navbar-brand"  >Advaith Malladi</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#interests">Interests</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<body>
+<section class="bgimage" id="home">
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hero-text">
+                <h2 class="title">Hello There!</h2>
+                <br>
+                <p class="desc" id="a"></p>
+            </div>
+            <script>
+                const h = document.getElementById('a');
+                let arr = ['I am Advaith', 'Check out my Website!'];
+
+                typing(h, 100, 0);
+                //erasing(h, 100,text);
+
+                function typing(tag, speed, index) {
+                    text = arr[index];
+                    var i = 0;
+                    console.log(text);
+                    function check() {
+                        if (i < text.length) {
+                            tag.append(text[i]);
+                            console.log(i);
+                            console.log(text[i]);
+                            i++;
+                        }
+                        else {
+                            clearInterval(time);
+                            erasing(tag, 80, index)
+                        }
+                    }
+
+                    var time = setInterval(check, speed);
+
+                    console.log(text)
+                }
+                function erasing(tag, speed, index) {
+                    var text = arr[index];
+                    var i = text.length;
+                    function check1() {
+                        console.log(i);
+                        if (i > 0) {
+                            tag.innerText = tag.innerText.slice(0, tag.innerText.length - 1);
+                            i--;
+                        }
+                        else {
+                            clearInterval(time);
+                            typing(h, 100, (++index) % 2);
+
+                        }
+                    }
+                    var time = setInterval(check1, speed);
+
+                }
+            </script>
+            </div>
+        </div>
+    </section>
+<section id="about">
+    <div class="container mt-4 pt-4">
+        <h1 class="text-center">About Me</h1>
+        <div class="row mt-4">
+            <div class="col-lg-4">
+                <img style="height:320px" style="width: 150px" src="/home/advaith/Dev/advaith_web/images/Advaith.jpeg" class="imageAboutPage" alt="">
+            </div>
+
+            <div class="col-lg-8">
+                <p>
+                    I am Advaith Malladi, a simple UG2 CLD student at IIIT Hyderabad trying to make his way through the Galaxy!
+                </p>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <h3>Education</h3>
+                        <br>
+                        <center>
+                            <table>
+                                <tr>
+                                    <th>Where?</th>
+                                    <th>What?</th>
+                                </tr>
+                                <tr>
+                                    <td>Narayana School, Bowenpally</td>
+                                    <td>High School</td>
+                                </tr>
+                                <tr>
+                                    <td>Narayana Junior College, Madhapur</td>
+                                    <td>11-12th Grades</td>
+                                </tr>
+                                <tr>
+                                    <td>International Institute of Information Technology, Hyderabad </td>
+                                    <td>BTech in CS + MS in CL</td>
+                                </tr>
+                            </table>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<br>
+<hr>
+<br>
+<section id="interests">
+    <center>
+        <h2>What might keep me up at night?</h2>
+        <br>
+        <button onclick="typeWriter()">Find Out!</button>
+        <br>
+        <div class="col-lg-8">
+            <p id="demo"></p>
+
+            <script>
+                var i = 0;
+                var txt = 'Computational Linguistics, Machine Learning, Science Fiction Movies, Politics, A Good Book';
+                var speed = 50;
+
+                function typeWriter() {
+                    if (i < txt.length) {
+                        document.getElementById("demo").innerHTML += txt.charAt(i);
+                        if (txt.charAt(i) == ',') {
+                            document.getElementById("demo").innerHTML += "<br />";
+                        }
+                        i++;
+                        setTimeout(typeWriter, speed);
+                    }
+                }
+            </script>
+        </div>
+    </center>
+</section>
+<br>
+<hr>
+<br>
+
+<section id="skills">
+    <div class="container">
+        <h1 class="text-center">Skills</h1>
+        <div class="row">
+            <div class="col-lg-4 mt-4">
+                <div class="card servicesText">
+                    <img style="height:320px" style="width: 150px" class="card-img-top"
+                        src="/home/advaith/Dev/advaith_web/images/c++.png" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title mt-3">C/C++</h4>
+                        <p class="card-text mt-3">
+                            I am proficient with C and C++.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-4">
+                <div class="card servicesText">
+                    <img style="height:320px" style="width: 150px" class="card-img-top"
+                        src="/home/advaith/Dev/advaith_web/images/webdev.png" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title mt-3">Website Design</h4>
+                        <p class="card-text mt-3">
+                            I am well-versed with HTML, CSS and a bit of JavaScript
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mt-4">
+                <div class="card servicesText">
+                    <img style="height:320px" style="width: 150px" class="card-img-top"
+                        src="/home/advaith/Dev/advaith_web/images/python.png" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title mt-3">Python</h4>
+                        <p class="card-text mt-3">
+                            I am good with Python, having completed quite a few projects in it.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 mt-4">
+                <div class="card servicesText">
+                    <img style="height:320px" style="width: 150px" class="card-img-top"
+                        src="/home/advaith/Dev/advaith_web/images/college-math.jpg" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title mt-3">Math</h4>
+                        <p class="card-text mt-3">
+                            I enjoy working in different areas of Mathematics like Linear Algebra, Probability, Statistics and use them frequently in my projects.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<hr>
+<br>
+<section id="projects">
+    <div class="container mt-3">
+        <h1 class="text-center">Projects</h1>
+        <br>
+        <center>
+        <h3>Take a look at some of my work</h3>
+        </center>
+        <br>
+        <div class="row">
+            <div class="col-lg-4 mt-4">
+                <div class="card">
+                    <img style="height:320px" style="width: 150px" class="card-img-top" src="/home/advaith/Dev/advaith_web/images/hatevsoff.png" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Hate Speech vs Offensive Speech Classification</h4>
+                        <p class="card-text">A logistic regression based machine learning model to classify speech as hate, offensive or neither.
+                        </p>
+                        <div class="text-center">
+                            <a href="https://github.com/advaithmall/hate_vs_offense" class="btn btn-success">Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mt-4">
+                <div class="card portfolioContent">
+                    <img style="height:320px" style="width: 150px"class="card-img-top" src="/home/advaith/Dev/advaith_web/images/hate_bow.jpeg" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Hate Speech Detection</h4>
+                        <p class="card-text">A bag of words based hate speech detection model to detect hate speech on any Twitter account.
+                        </p>
+                        <div class="text-center">
+                            <a href="https://github.com/advaithmall/hatespeech_BOW" class="btn btn-success">Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mt-4">
+                <div class="card portfolioContent">
+                    <img style="height:320px" style="width: 150px" class="card-img-top" src="/home/advaith/Dev/advaith_web/images/word_cloud.png" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Wordcloud for Twitter Users</h4>
+                        <p class="card-text">Generate a wordcloud for any twitter user based on his tweets. Above is a wordcloud made based on US President Biden's tweets.
+                        </p>
+                        <div class="text-center">
+                            <a href="https://github.com/advaithmall/Wordcloud_twitter" class="btn btn-success">Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-4 mt-4">
+                <div class="card portfolioContent">
+                    <img style="height:320px" style="width: 150px"class="card-img-top" src="/home/advaith/Dev/advaith_web/images/summarizer.png" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Automatic Summarizer</h4>
+                        <p class="card-text">An extraction based automatic summarizer based on weighted averages.
+                        </p>
+                        <div class="text-center">
+                            <a href="https://github.com/advaithmall/Summarizer" class="btn btn-success">Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mt-4">
+                <div class="card portfolioContent">
+                    <img style="height:320px" style="width: 150px"class="card-img-top" src="/home/advaith/Dev/advaith_web/images/telugu.png" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Telugu Analysis</h4>
+                        <p class="card-text">Code for syntactically analyzing any piece of text in Telugu, a South Indian Language. 
+                        </p>
+                        <div class="text-center">
+                            <a href="https://github.com/advaithmall/Tokenizer_postagger_telugu" class="btn btn-success">Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<br>
+<hr>
+<br>
+
+<section id="contact">
+    <div class="container mt-3 contactContent">
+        <h1 class="text-center">Collaborate?</h1>
+        <br>
+        <h3>Do reach out to me for any collaborations on cool projects in my interested areas</h3>
+        <br>
+        <center>
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Link</th>
+                </tr>
+                <tr>
+                    <td><img style="height:150px" style="width: 150px" src="/home/advaith/Dev/advaith_web/images/outlooj.jpeg"></td>
+                    <td><a href="mailto:advaith.malladi@research.iiit.ac.in" class="btn btn-success">Email!</a></td>
+                </tr>
+                <tr>
+                    <td><img style="height:150px" style="width: 150px" src="/home/advaith/Dev/advaith_web/images/git.png"></td>
+                    <td><a href="https://github.com/advaithmall" class="btn btn-success">Visit!</a></td>
+                </tr>
+            </table>
+        </center>
+    </div>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
